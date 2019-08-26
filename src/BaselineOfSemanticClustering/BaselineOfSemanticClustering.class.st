@@ -22,11 +22,15 @@ BaselineOfSemanticClustering >> baselineOf: spec [
 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:v1.0/src' ].
 			
 		spec
+			baseline: 'KMeans'
+			with: [ spec repositories: 'github://olekscode/KMeans/src' ].
+			
+		spec
 			baseline: 'Roassal3'
 			with: [ spec repository: 'github://ObjectProfile/Roassal3' ].
 
 		"Packages"
 		spec 
 			package: 'SemanticClustering'
-			with: [ spec requires: #(CodeTokenizer Polyglot PolyMath Roassal3) ] ].
+			with: [ spec requires: #(CodeTokenizer Polyglot PolyMath KMeans Roassal3) ] ].
 ]

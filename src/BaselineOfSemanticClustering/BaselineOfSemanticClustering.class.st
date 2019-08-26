@@ -23,7 +23,7 @@ BaselineOfSemanticClustering >> baselineOf: spec [
 			
 		spec
 			baseline: 'KMeans'
-			with: [ spec repositories: 'github://olekscode/KMeans/src' ].
+			with: [ spec repository: 'github://olekscode/KMeans/src' ].
 			
 		spec
 			baseline: 'Roassal3'

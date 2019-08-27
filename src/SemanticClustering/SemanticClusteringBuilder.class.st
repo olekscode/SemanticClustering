@@ -157,7 +157,7 @@ SemanticClusteringBuilder >> projects: anObject [
 SemanticClusteringBuilder >> reduceDimensionalityWithTSNE [
 	| tsne |
 	tsne := PMTSNE new
-		perplexity: 5;
+		perplexity: 6;
 		x: self distanceMatrix;
 		yourself.
 		

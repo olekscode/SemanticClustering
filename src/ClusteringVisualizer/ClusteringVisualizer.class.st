@@ -26,7 +26,7 @@ ClusteringVisualizer >> drawClusters [
 	clusterModels do: [ :clusterModel |
 		ellipse := TSEllipse new
 			color: ((TSCPDiverging new spectral7 range at: clusterModel index) alpha: 0.3);
-			size: clusterModel radius;
+			size: (clusterModel radius * 2);
 			position: (clusterModel centroid second @ clusterModel centroid first);
 			yourself.
 		

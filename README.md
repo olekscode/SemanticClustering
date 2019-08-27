@@ -23,3 +23,11 @@ clusteringBuilder := SemanticClusteringBuilder new
 "Some steps can take more than 30 min"
 clusteringBuilder start.
 ```
+
+## Loading the Trained Model
+
+You can download the FUEL serialization of a trained `SemanticClustering` object: https://drive.google.com/file/d/1WJTeD8jRpDU7WyMz_FtybPujLMCJj5u-/view?usp=sharing.
+
+```Smalltalk
+semanticClustering := FLMaterializer materializeFromFileNamed: 'semanticClustering.fuel'.
+```

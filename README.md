@@ -11,7 +11,7 @@ Metacello new
   load.
 ```
 
-## Usage Example
+## Training the Model
 
 ```Smalltalk
 projects := #(Morphic Tool System Polymorph Calypso Kernel Athens Metacello OpalCompiler Fuel Monticello Collections Reflectivity OSWindow Rubric Graphics STON UnifiedFFI Zinc SUnit Epicea Refactoring Text Renraku AST Commander Network Keymapping Refactoring2 Regex Shift Debugger Ombu).

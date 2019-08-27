@@ -21,7 +21,8 @@ SemanticClusteringBuilder >> buildClusterModels [
 	clusteredPoints := self projectModels groupedBy: #cluster.
 	
 	self clusterModels: (clusteredPoints keys collect: [ :cluster |
-		ClusterRoassalModel new
+		ClusterViewModel new
+			index: cluster;
 			points: ((clusteredPoints at: cluster) collect: #point);
 			centroid: (self kmeans centroids at: cluster);
 			yourself ]).
@@ -30,7 +31,7 @@ SemanticClusteringBuilder >> buildClusterModels [
 { #category : #steps }
 SemanticClusteringBuilder >> buildProjectModels [
 	self projectModels: ((1 to: projects size) collect: [:i |
-		ProjectRoassalModel new
+		ProjectViewModel new
 			name: (self projects at: i);
 			point: (self points at: i);
 			cluster: (self kmeans clusters at: i);

@@ -1,40 +1,40 @@
 Class {
-	#name : #ProjectRoassalModel,
+	#name : #ProjectViewModel,
 	#superclass : #Object,
 	#instVars : [
 		'name',
 		'point',
 		'cluster'
 	],
-	#category : #SemanticClustering
+	#category : #SemanticClusteringViewModels
 }
 
 { #category : #accessing }
-ProjectRoassalModel >> cluster [
+ProjectViewModel >> cluster [
 	^ cluster
 ]
 
 { #category : #accessing }
-ProjectRoassalModel >> cluster: anObject [
+ProjectViewModel >> cluster: anObject [
 	cluster := anObject
 ]
 
 { #category : #accessing }
-ProjectRoassalModel >> name [
+ProjectViewModel >> name [
 	^ name
 ]
 
 { #category : #accessing }
-ProjectRoassalModel >> name: anObject [
+ProjectViewModel >> name: anObject [
 	name := anObject
 ]
 
 { #category : #accessing }
-ProjectRoassalModel >> point [
+ProjectViewModel >> point [
 	^ point
 ]
 
 { #category : #accessing }
-ProjectRoassalModel >> point: anObject [
+ProjectViewModel >> point: anObject [
 	point := anObject
 ]

@@ -1,35 +1,46 @@
 Class {
-	#name : #ClusterRoassalModel,
+	#name : #ClusterViewModel,
 	#superclass : #Object,
 	#instVars : [
+		'index',
 		'centroid',
 		'points'
 	],
-	#category : #SemanticClustering
+	#category : #SemanticClusteringViewModels
 }
 
 { #category : #accessing }
-ClusterRoassalModel >> centroid [
+ClusterViewModel >> centroid [
 	^ centroid
 ]
 
 { #category : #accessing }
-ClusterRoassalModel >> centroid: anObject [
+ClusterViewModel >> centroid: anObject [
 	centroid := anObject
 ]
 
 { #category : #accessing }
-ClusterRoassalModel >> points [
+ClusterViewModel >> index [
+	^ index
+]
+
+{ #category : #accessing }
+ClusterViewModel >> index: anObject [
+	index := anObject
+]
+
+{ #category : #accessing }
+ClusterViewModel >> points [
 	^ points
 ]
 
 { #category : #accessing }
-ClusterRoassalModel >> points: anObject [
+ClusterViewModel >> points: anObject [
 	points := anObject
 ]
 
 { #category : #accessing }
-ClusterRoassalModel >> radius [ 
+ClusterViewModel >> radius [ 
 	| distances |
 	distances := self points collect: [ :point |
 		KMeans new distanceBetween: point and: self centroid ].

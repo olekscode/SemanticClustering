@@ -55,18 +55,14 @@ SemanticClusteringBuilder >> clusterModels: anObject [
 
 { #category : #steps }
 SemanticClusteringBuilder >> computeDistanceMatrix [
-	self distanceMatrix: (1 - self similarityMatrix)
+	self distanceMatrix: (PMMatrix rows: (1 - self similarityMatrix))
 ]
 
 { #category : #steps }
 SemanticClusteringBuilder >> computeSimilarityMatrix [
-	| similarities |
-	
-	similarities := self tfidfVectors collect: [ :rowVector |
+	self similarityMatrix: (self tfidfVectors collect: [ :rowVector |
 		self tfidfVectors collect: [ :columnVector |
-			rowVector cosineSimilarity: columnVector ]].
-	
-	self similarityMatrix: (PMMatrix rows: similarities).
+			rowVector cosineSimilarity: columnVector ]]).
 ]
 
 { #category : #steps }
@@ -165,7 +161,7 @@ SemanticClusteringBuilder >> reduceDimensionalityWithTSNE [
 		yourself.
 		
 	tsne start.
-	self points: (tsne y rows collect: #asOrderedCollection).
+	self points: tsne y rows.
 ]
 
 { #category : #steps }

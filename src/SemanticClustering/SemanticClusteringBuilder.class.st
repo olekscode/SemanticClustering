@@ -22,7 +22,7 @@ SemanticClusteringBuilder >> buildClusterModels [
 	
 	self clusterModels: (clusteredPoints keys collect: [ :cluster |
 		ClusterRoassalModel new
-			points: (clusteredPoints at: cluster);
+			points: ((clusteredPoints at: cluster) collect: #point);
 			centroid: (self kmeans centroids at: cluster);
 			yourself ]).
 ]

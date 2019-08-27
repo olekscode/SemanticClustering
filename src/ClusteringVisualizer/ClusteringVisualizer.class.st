@@ -20,12 +20,17 @@ ClusteringVisualizer >> clusterModels: anObject [
 ]
 
 { #category : #initialization }
+ClusteringVisualizer >> colors [
+	^ TSScale google20 range
+]
+
+{ #category : #initialization }
 ClusteringVisualizer >> drawClusters [
 	| ellipse |
 	
 	clusterModels do: [ :clusterModel |
 		ellipse := TSEllipse new
-			color: ((TSCPDiverging new spectral7 range at: clusterModel index) alpha: 0.3);
+			color: ((self colors at: clusterModel index) alpha: 0.2);
 			size: (clusterModel radius * 2);
 			position: (clusterModel centroid second @ clusterModel centroid first);
 			yourself.
@@ -39,7 +44,7 @@ ClusteringVisualizer >> drawPoints [
 	
 	pointModels do: [ :pointModel |
 		ellipse := TSEllipse new
-			color: (TSCPDiverging new spectral7 range at: pointModel cluster);
+			color: (self colors at: pointModel cluster);
 			size: 10;
 			position: (pointModel point second @ pointModel point first);
 			yourself.

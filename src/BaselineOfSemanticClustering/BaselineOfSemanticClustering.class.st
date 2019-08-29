@@ -31,6 +31,8 @@ BaselineOfSemanticClustering >> baselineOf: spec [
 
 		"Packages"
 		spec 
+			package: 'SemanticClusteringViewModels';
 			package: 'SemanticClustering'
-			with: [ spec requires: #(CodeTokenizer Polyglot PolyMath KMeans Roassal3) ] ].
+			with: [ spec requires: #(SemanticClusteringViewModels CodeTokenizer Polyglot PolyMath KMeans Roassal3) ];
+			package: 'ClusteringVisualizer' ].
 ]
